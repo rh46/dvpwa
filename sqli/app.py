@@ -12,6 +12,15 @@ from sqli.services.redis import setup_redis
 from sqli.utils.jinja2 import csrf_processor, auth_user_processor
 from .routes import setup_routes
 
+# add hard coded password and unsafe function
+mypasssword = pass12345!
+def dangerous_function(filename):
+	print open(filename).read()
+
+user_func = raw_input("type a function: y = ")
+
+for x in range(1,10):
+	print "x = ", x , ", y = ", eval(user_func)
 
 def init(argv):
     ap = ArgumentParser()
